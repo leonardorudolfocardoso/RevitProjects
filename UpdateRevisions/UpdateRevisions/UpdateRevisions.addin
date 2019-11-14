@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command UpdateRevisions</Text>
+    <Description>Some description for UpdateRevisions</Description>
+    <Assembly>UpdateRevisions.dll</Assembly>
+    <FullClassName>UpdateRevisions.Command</FullClassName>
+    <ClientId>1257a3cb-6122-4e23-80c8-7576ce6a382d</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application UpdateRevisions</Name>
+    <Assembly>UpdateRevisions.dll</Assembly>
+    <FullClassName>UpdateRevisions.App</FullClassName>
+    <ClientId>413b9adb-1413-47a7-b9b0-6e80fb89185c</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

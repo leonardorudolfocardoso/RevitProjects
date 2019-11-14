@@ -62,6 +62,8 @@ namespace GetScheduleData
                 Excel._Application oXL = exportToExcel.Application;
                 Excel._Workbook oWB = exportToExcel.Workbook;
 
+
+                oXL.UserControl = false;
                 try
                 {
                     // saving and closing

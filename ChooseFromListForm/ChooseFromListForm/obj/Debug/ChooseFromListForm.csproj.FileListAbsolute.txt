@@ -1,9 +1,0 @@
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\obj\Debug\ChooseFromListForm.csprojAssemblyReference.cache
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\obj\Debug\ChooseFromListForm.Properties.Resources.resources
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\obj\Debug\ChooseFromListForm.csproj.GenerateResource.cache
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\bin\Debug\ChooseFromListForm.exe.config
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\bin\Debug\ChooseFromListForm.exe
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\bin\Debug\ChooseFromListForm.pdb
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\obj\Debug\ChooseFromListForm.exe
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\obj\Debug\ChooseFromListForm.pdb
-C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ChooseFromListForm\ChooseFromListForm\obj\Debug\ChooseFromListForm.SelectFromListForm.resources

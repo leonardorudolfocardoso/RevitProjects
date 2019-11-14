@@ -1,0 +1,7 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\UpdateRevisions\UpdateRevisions\obj\Debug\UpdateRevisions.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\UpdateRevisions\UpdateRevisions\obj\Debug\UpdateRevisions.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\UpdateRevisions\UpdateRevisions\obj\Debug\UpdateRevisions.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\UpdateRevisions\UpdateRevisions\bin\Debug\UpdateRevisions.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\UpdateRevisions\UpdateRevisions\bin\Debug\UpdateRevisions.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\UpdateRevisions\UpdateRevisions\obj\Debug\UpdateRevisions.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\UpdateRevisions\UpdateRevisions\obj\Debug\UpdateRevisions.pdb

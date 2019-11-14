@@ -19,7 +19,7 @@ DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\setups
+OutputDir=C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\setups
 OutputBaseFilename={#MyAppName}.setup
 Compression=lzma
 SolidCompression=yes
@@ -31,8 +31,8 @@ Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortugue
 
 [Files]
 ; Source: "C:\Program Files (x86)\Inno Setup 6\Examples\MyProg.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\bin\Debug\GetScheduleData.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\GetScheduleData.addin"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\GetScheduleData\GetScheduleData\bin\Debug\GetScheduleData.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\GetScheduleData\GetScheduleData\GetScheduleData.addin"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

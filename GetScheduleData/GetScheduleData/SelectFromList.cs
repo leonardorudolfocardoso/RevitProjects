@@ -91,5 +91,54 @@ namespace GetScheduleData
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void btn_moveUp_Click(object sender, EventArgs e)
+        {
+            // get the selected item index
+            int index = checkedListBox1.SelectedIndex;
+
+            // the item can not be the first one
+            if (index > 0)
+            {
+                var aboveItem = checkedListBox1.Items[index-1];
+                var bellowItem = checkedListBox1.Items[index];
+
+                bool aboveCheck = checkedListBox1.GetItemChecked(index - 1);
+                bool bellowCheck = checkedListBox1.GetItemChecked(index);
+
+                checkedListBox1.Items[index - 1] = bellowItem;
+                checkedListBox1.Items[index] = aboveItem;
+
+                checkedListBox1.SetItemChecked(index - 1, bellowCheck);
+                checkedListBox1.SetItemChecked(index, aboveCheck);
+
+
+                checkedListBox1.SelectedIndex = index - 1;
+            }
+        }
+
+        private void btn_moveDown_Click(object sender, EventArgs e)
+        {
+            // get the selected item index
+            int index = checkedListBox1.SelectedIndex;
+
+            // the item can not be the last one
+            if (index < checkedListBox1.Items.Count-1)
+            {
+                var aboveItem = checkedListBox1.Items[index];
+                var bellowItem = checkedListBox1.Items[index + 1];
+
+                bool aboveCheck = checkedListBox1.GetItemChecked(index);
+                bool bellowCheck = checkedListBox1.GetItemChecked(index + 1);
+
+                checkedListBox1.Items[index] = bellowItem;
+                checkedListBox1.Items[index + 1] = aboveItem;
+
+                checkedListBox1.SetItemChecked(index, bellowCheck);
+                checkedListBox1.SetItemChecked(index + 1, aboveCheck);
+
+                checkedListBox1.SelectedIndex = index + 1;
+            }
+        }
     }
 }

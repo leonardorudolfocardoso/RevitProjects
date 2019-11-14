@@ -16,7 +16,7 @@ namespace CreatePlanViewBasedOnLevels
         public Result OnStartup(UIControlledApplication a)
         {
             RevitAddIn revitAddIn = new RevitAddIn(a,
-                "Criar\nvistas",
+                "Criar\nplantas",
                 "CreatePlanViewBasedOnLevels.Command",
                 "Ferramentas",
                 "BFS Tools"
@@ -33,7 +33,7 @@ namespace CreatePlanViewBasedOnLevels
                 Assembly.GetExecutingAssembly().Location,
                 revitAddIn.ClassName)
             {
-                ToolTip = "Cria uma planta para cada nível existente.",
+                ToolTip = "Cria uma planta para cada nível selecionado.",
                 LongDescription = "",
                 Image = revitAddIn.GetImageSource(revitAddIn.Img),
                 LargeImage = revitAddIn.GetImageSource(revitAddIn.LImg)
