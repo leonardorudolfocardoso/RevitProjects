@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command ExportToDwg</Text>
+    <Description>Some description for ExportToDwg</Description>
+    <Assembly>ExportToDwg.dll</Assembly>
+    <FullClassName>ExportToDwg.Command</FullClassName>
+    <ClientId>5a7683ae-4171-43b8-8ea0-6c012339a8ea</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application ExportToDwg</Name>
+    <Assembly>ExportToDwg.dll</Assembly>
+    <FullClassName>ExportToDwg.App</FullClassName>
+    <ClientId>4aa9de68-83b2-411a-bfbe-c958bacd0d58</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

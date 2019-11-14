@@ -1,0 +1,8 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ImportLevel\ImportLevel\obj\Debug\ImportLevel.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ImportLevel\ImportLevel\obj\Debug\ImportLevel.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ImportLevel\ImportLevel\obj\Debug\ImportLevel.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ImportLevel\ImportLevel\bin\Debug\ImportLevel.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ImportLevel\ImportLevel\bin\Debug\ImportLevel.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ImportLevel\ImportLevel\obj\Debug\ImportLevel.SelectFromList.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ImportLevel\ImportLevel\obj\Debug\ImportLevel.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ImportLevel\ImportLevel\obj\Debug\ImportLevel.pdb

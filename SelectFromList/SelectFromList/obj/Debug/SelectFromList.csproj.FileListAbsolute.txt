@@ -1,0 +1,9 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\obj\Debug\SelectFromList.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\obj\Debug\SelectFromList.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\obj\Debug\SelectFromList.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\bin\Debug\SelectFromList.exe.config
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\bin\Debug\SelectFromList.exe
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\bin\Debug\SelectFromList.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\obj\Debug\SelectFromList.SelectFromList.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\obj\Debug\SelectFromList.exe
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\SelectFromList\SelectFromList\obj\Debug\SelectFromList.pdb

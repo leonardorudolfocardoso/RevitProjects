@@ -1,0 +1,7 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PurgeUnused\PurgeUnused\obj\Debug\PurgeUnused.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PurgeUnused\PurgeUnused\obj\Debug\PurgeUnused.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PurgeUnused\PurgeUnused\obj\Debug\PurgeUnused.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PurgeUnused\PurgeUnused\bin\Debug\PurgeUnused.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PurgeUnused\PurgeUnused\bin\Debug\PurgeUnused.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PurgeUnused\PurgeUnused\obj\Debug\PurgeUnused.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PurgeUnused\PurgeUnused\obj\Debug\PurgeUnused.pdb

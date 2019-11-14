@@ -1,0 +1,9 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\bin\Debug\LimparProjeto.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\bin\Debug\LimparProjeto.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\obj\Debug\LimparProjeto.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\obj\Debug\LimparProjeto.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\obj\Debug\LimparProjeto.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\obj\Debug\LimparProjeto.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\obj\Debug\LimparProjeto.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\obj\Debug\LimparProjeto.SelectFromList.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\LimparProjeto\LimparProjeto\obj\Debug\LimparProjeto.ToolExtract.resources

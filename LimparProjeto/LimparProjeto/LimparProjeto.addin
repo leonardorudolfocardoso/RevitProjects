@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command LimparProjeto</Text>
+    <Description>Some description for LimparProjeto</Description>
+    <Assembly>LimparProjeto.dll</Assembly>
+    <FullClassName>LimparProjeto.Command</FullClassName>
+    <ClientId>a38514ee-6e26-4b4b-a4a2-950a93769f8a</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application LimparProjeto</Name>
+    <Assembly>LimparProjeto.dll</Assembly>
+    <FullClassName>LimparProjeto.App</FullClassName>
+    <ClientId>7fb5927a-4911-43b9-9ba5-aa576e824e9b</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command BeamCoping</Text>
+    <Description>Some description for BeamCoping</Description>
+    <Assembly>BeamCoping.dll</Assembly>
+    <FullClassName>BeamCoping.Command</FullClassName>
+    <ClientId>d3f3cb0e-097d-4550-9019-e1742bd0b0fb</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application BeamCoping</Name>
+    <Assembly>BeamCoping.dll</Assembly>
+    <FullClassName>BeamCoping.App</FullClassName>
+    <ClientId>a89f2561-4d88-46ff-9619-9b2518d33b40</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

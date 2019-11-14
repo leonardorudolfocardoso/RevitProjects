@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command GetScheduleData</Text>
+    <Description>Some description for GetScheduleData</Description>
+    <Assembly>GetScheduleData.dll</Assembly>
+    <FullClassName>GetScheduleData.Command</FullClassName>
+    <ClientId>c08739e8-248f-4b01-b4d7-7491295c2f2a</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application GetScheduleData</Name>
+    <Assembly>GetScheduleData.dll</Assembly>
+    <FullClassName>GetScheduleData.App</FullClassName>
+    <ClientId>4af1a2c1-d8e8-4729-93dc-60ec32c11b97</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

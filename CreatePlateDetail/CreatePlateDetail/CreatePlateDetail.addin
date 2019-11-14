@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command CreatePlateDetail</Text>
+    <Description>Some description for CreatePlateDetail</Description>
+    <Assembly>CreatePlateDetail.dll</Assembly>
+    <FullClassName>CreatePlateDetail.Command</FullClassName>
+    <ClientId>81d2493e-4348-46ed-8fdb-7088e3e93f46</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application CreatePlateDetail</Name>
+    <Assembly>CreatePlateDetail.dll</Assembly>
+    <FullClassName>CreatePlateDetail.App</FullClassName>
+    <ClientId>42a5a05d-8eee-4c4c-be1a-db60af4671e8</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

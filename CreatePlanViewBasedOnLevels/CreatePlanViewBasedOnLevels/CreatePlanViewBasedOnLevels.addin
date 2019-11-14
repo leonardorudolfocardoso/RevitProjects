@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command CreatePlanViewBasedOnLevels</Text>
+    <Description>Some description for CreatePlanViewBasedOnLevels</Description>
+    <Assembly>CreatePlanViewBasedOnLevels.dll</Assembly>
+    <FullClassName>CreatePlanViewBasedOnLevels.Command</FullClassName>
+    <ClientId>32478ada-2bf5-41b0-a4be-0e592c4ee5e1</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application CreatePlanViewBasedOnLevels</Name>
+    <Assembly>CreatePlanViewBasedOnLevels.dll</Assembly>
+    <FullClassName>CreatePlanViewBasedOnLevels.App</FullClassName>
+    <ClientId>4a1bc10c-7e2a-43fc-8dc0-70bd34a6057c</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,9 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\obj\Debug\GetScheduleData.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\obj\Debug\GetScheduleData.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\obj\Debug\GetScheduleData.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\bin\Debug\GetScheduleData.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\bin\Debug\GetScheduleData.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\obj\Debug\GetScheduleData.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\obj\Debug\GetScheduleData.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\obj\Debug\GetScheduleData.csproj.ResolveComReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\GetScheduleData\GetScheduleData\obj\Debug\GetScheduleData.SelectFromList.resources

@@ -1,0 +1,8 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlanViewBasedOnLevels\CreatePlanViewBasedOnLevels\bin\Debug\CreatePlanViewBasedOnLevels.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlanViewBasedOnLevels\CreatePlanViewBasedOnLevels\bin\Debug\CreatePlanViewBasedOnLevels.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlanViewBasedOnLevels\CreatePlanViewBasedOnLevels\obj\Debug\CreatePlanViewBasedOnLevels.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlanViewBasedOnLevels\CreatePlanViewBasedOnLevels\obj\Debug\CreatePlanViewBasedOnLevels.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlanViewBasedOnLevels\CreatePlanViewBasedOnLevels\obj\Debug\CreatePlanViewBasedOnLevels.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlanViewBasedOnLevels\CreatePlanViewBasedOnLevels\obj\Debug\CreatePlanViewBasedOnLevels.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlanViewBasedOnLevels\CreatePlanViewBasedOnLevels\obj\Debug\CreatePlanViewBasedOnLevels.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlanViewBasedOnLevels\CreatePlanViewBasedOnLevels\obj\Debug\CreatePlanViewBasedOnLevels.SelectFromList.resources

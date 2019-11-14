@@ -1,0 +1,7 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\BeamCoping\BeamCoping\bin\Debug\BeamCoping.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\BeamCoping\BeamCoping\bin\Debug\BeamCoping.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\BeamCoping\BeamCoping\obj\Debug\BeamCoping.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\BeamCoping\BeamCoping\obj\Debug\BeamCoping.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\BeamCoping\BeamCoping\obj\Debug\BeamCoping.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\BeamCoping\BeamCoping\obj\Debug\BeamCoping.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\BeamCoping\BeamCoping\obj\Debug\BeamCoping.pdb

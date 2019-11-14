@@ -1,0 +1,9 @@
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\obj\Debug\DeleteViews.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\obj\Debug\DeleteViews.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\obj\Debug\DeleteViews.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\bin\Debug\DeleteViews.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\bin\Debug\DeleteViews.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\obj\Debug\DeleteViews.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\obj\Debug\DeleteViews.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\obj\Debug\DeleteViews.AppForm.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\DeleteViews\DeleteViews\obj\Debug\DeleteViews.ResumeDialog.resources

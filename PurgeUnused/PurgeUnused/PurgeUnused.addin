@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command PurgeUnused</Text>
+    <Description>Some description for PurgeUnused</Description>
+    <Assembly>PurgeUnused.dll</Assembly>
+    <FullClassName>PurgeUnused.Command</FullClassName>
+    <ClientId>9baa93ee-28f6-4641-93d8-7cd5bcf80da1</ClientId>
+    <VendorId>Leonardo BFS</VendorId>
+    <VendorDescription>BFS Engenharia Ltda</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application PurgeUnused</Name>
+    <Assembly>PurgeUnused.dll</Assembly>
+    <FullClassName>PurgeUnused.App</FullClassName>
+    <ClientId>08dd40f6-b828-4c4f-8124-54b19c9516a6</ClientId>
+    <VendorId>Leonardo BFS</VendorId>
+    <VendorDescription>BFS Engenharia Ltda</VendorDescription>
+  </AddIn>
+</RevitAddIns>

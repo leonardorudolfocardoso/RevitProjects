@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command ImportLevel</Text>
+    <Description>Some description for ImportLevel</Description>
+    <Assembly>ImportLevel.dll</Assembly>
+    <FullClassName>ImportLevel.Command</FullClassName>
+    <ClientId>427807c5-4eaa-47c7-9b2e-c9f0cde32d86</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application ImportLevel</Name>
+    <Assembly>ImportLevel.dll</Assembly>
+    <FullClassName>ImportLevel.App</FullClassName>
+    <ClientId>6eee9668-9c53-4fef-b5ad-a024bfb127c3</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>
