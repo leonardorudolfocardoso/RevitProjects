@@ -6,3 +6,11 @@ C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PrintToPdf\PrintTo
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.csproj.GenerateResource.cache
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.dll
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\PrintToPdf\PrintToPdf\bin\Debug\PrintToPdf.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\PrintToPdf\PrintToPdf\bin\Debug\PrintToPdf.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.SelectFromList.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\PrintToPdf\PrintToPdf\obj\Debug\PrintToPdf.pdb

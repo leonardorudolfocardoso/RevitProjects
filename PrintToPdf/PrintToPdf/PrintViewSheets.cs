@@ -14,6 +14,7 @@ namespace PrintToPdf
         #region Properties
         public Document Doc { get; set; }
         public List<ViewSheet> ViewSheets { get; set; }
+        public int ViewSheetQuantity { get; set; }
         public List<string> SheetSizes { get; set; }
         public List<PrintSetting> PrintSettings { get; set; }
         public List<string> FilePaths { get; set; }
@@ -25,6 +26,7 @@ namespace PrintToPdf
             this.Transaction = new Transaction(this.Doc, "Função de Exportar PDF");
 
             this.ViewSheets = viewSheets;
+            this.ViewSheetQuantity = this.GetViewSheetQuantity();
             this.SheetSizes = this.GetSheetSizes();
             this.PrintSettings = this.GetPrintSettings();
             this.FilePaths = this.GetFilePaths();
@@ -43,19 +45,17 @@ namespace PrintToPdf
 
             foreach (var vs in zip)
             {
-                try
-                {
-                    this.PrintViewSheet(vs.ViewSheet, vs.SheetSize, vs.PrintSetting, vs.FilePath);
-                }
-                catch (Exception)
-                {
-                    System.Windows.Forms.MessageBox.Show(
-                        String.Format("A folha {0} não foi impressa devido a um erro.",
-                            vs.ViewSheet.Title), "Erro");
-                }
+                this.PrintViewSheet(vs.ViewSheet, vs.SheetSize, vs.PrintSetting, vs.FilePath);
             }
         }
 
+        private int GetViewSheetQuantity()
+        {
+            int viewSheetQuantity = new FilteredElementCollector(this.Doc)
+                .OfCategory(BuiltInCategory.OST_Sheets).ToElements().Count;
+            return viewSheetQuantity;
+        }
+        
         private List<string> GetFilePaths()
         {
             // grabs the document directory
@@ -81,10 +81,10 @@ namespace PrintToPdf
             {
                 var currentRevision = vs.ViewSheet.GetCurrentRevision();
                 var sequenceNumber = (this.Doc.GetElement(currentRevision) as Revision).SequenceNumber;
-                rev = String.Format("Rev.{0}", sequenceNumber);
+                rev = String.Format("Rev.{0}", sequenceNumber - 1);
 
                 filePath = String.Format("{0}-{1}_{2}.0{3}-{4}.pdf", file_path_prefix,
-                    rev, vs.ViewSheet.SheetNumber, this.ViewSheets.Count, vs.SheetSize); 
+                    rev, vs.ViewSheet.SheetNumber, this.ViewSheetQuantity, vs.SheetSize); 
                 filePaths.Add(filePath);
             }
             return filePaths;
@@ -216,10 +216,32 @@ namespace PrintToPdf
 
         private List<PrintSetting> GetPrintSettings()
         {
-            List<PrintSetting> printSettings = new List<PrintSetting>
+            List<PrintSetting> printSettings = new List<PrintSetting>();
+            List<PrintSetting> allPrintSettings = new List<PrintSetting>
                                                (new FilteredElementCollector(this.Doc)
                                                 .OfClass(typeof(PrintSetting))
                                                 .ToElements().Cast<PrintSetting>().ToList());
+
+            foreach (String sheetSize in this.SheetSizes)
+            {
+                foreach (PrintSetting printSetting in allPrintSettings)
+                {
+                    if (printSetting.Name == sheetSize)
+                    {
+                        printSettings.Add(printSetting);
+                        break;
+                    }
+                    if (printSetting == allPrintSettings.Last())
+                    {
+                        throw new Exception(String.Format(
+                            "Tamanho de folha {0} não configurada." +
+                            "Vá em 'Imprimir->Configurar...' e crie uma configuração de impressão com" +
+                            "nome e tamanho '{1}'.",
+                            sheetSize, sheetSize));
+                    }
+                }
+            }
+
             return printSettings;
         }
 

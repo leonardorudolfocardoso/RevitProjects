@@ -45,10 +45,16 @@ namespace PrintToPdf
                 .Cast<ViewSheet>().ToList();
 
             // print view sheets
-            PrintViewSheets printViewSheets = new PrintViewSheets(doc, viewSheets);
+            try
+            {
+                PrintViewSheets printViewSheets = new PrintViewSheets(doc, viewSheets);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message, "Erro");
+            }
 
-            System.Windows.Forms.MessageBox.Show("Exportação finalizada.", "Resumo");
-
+            System.Windows.Forms.MessageBox.Show("Exportação finalizada.", "Exportar PDF");
             return Result.Succeeded;
         }
     }
