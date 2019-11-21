@@ -14,12 +14,17 @@ namespace FreezeDrawing
 {
     public partial class MainForm : System.Windows.Forms.Form
     {
+
         public Document Doc { get; set; }
         public List<View> SelectedViews { get; set; }
+        public DWGExportOptions DWGExportOptions { get; set; }
+        public DWGImportOptions DWGImportOptions { get; set; }
 
         public MainForm(Document doc)
         {
             this.Doc = doc;
+            this.DWGExportOptions = new DWGExportOptions();
+            this.DWGImportOptions = new DWGImportOptions();
             InitializeComponent();
         }
 
@@ -108,5 +113,34 @@ namespace FreezeDrawing
             this.Close();
         }
 
+        private void btn_Options_Click(object sender, EventArgs e)
+        {
+            OptionsForm optionsForm = new OptionsForm(this.GetDwgOptions());
+            DialogResult dialogResult = optionsForm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                this.DWGExportOptions = optionsForm.DWGExportOptions;
+                this.DWGImportOptions = optionsForm.DWGImportOptions;
+            }
+        }
+
+        private List<DWGExportOptions> GetDwgOptions()
+        {
+            // Get setup names
+            List<string> setupNames = BaseExportOptions.GetPredefinedSetupNames(this.Doc).ToList();
+            
+            // Create list to store the options
+            List<DWGExportOptions> allDWGExportOptions = new List<DWGExportOptions>();
+
+            // iterating over setup names and getting its dwgExportOption
+            foreach (String setupName in setupNames)
+            {
+                DWGExportOptions dwgExportOptions = DWGExportOptions.GetPredefinedOptions(this.Doc, setupName);
+                allDWGExportOptions.Add(dwgExportOptions);
+            }
+
+            return allDWGExportOptions;
+        }
     }
 }

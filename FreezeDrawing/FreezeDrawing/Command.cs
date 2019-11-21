@@ -54,7 +54,9 @@ namespace FreezeDrawing
 
             foreach (View view in mainForm.SelectedViews)
             {
-                FreezeDrawing(doc, view);
+                View viewCopy = doc.GetElement(view.Duplicate(ViewDuplicateOption.Duplicate)) as View;
+                FreezeDrawing(doc, viewCopy);
+                doc.Delete(viewCopy.Id);
             }
 
             tx.Commit();
@@ -102,47 +104,49 @@ namespace FreezeDrawing
 
         private void FreezeDrawing(Document doc, View view)
         {
-            try
-            {
-                // Create the ViewSheetToExport
-                ViewSheet tempViewSheet = CreateViewSheetToExport(doc);
+            //try
+            //{
+            // Create the ViewSheetToExport
+            ViewSheet tempViewSheet = CreateViewSheetToExport(doc);
+            doc.Regenerate();
 
-                // Create the viewport with the view on tempViewSheet
-                _ = Viewport.Create(doc, tempViewSheet.Id, view.Id, new XYZ());
+            // Create the viewport with the view on tempViewSheet
+            _ = Viewport.Create(doc, tempViewSheet.Id, view.Id, new XYZ());
+            doc.Regenerate();
 
-                // Get dwg export options
-                DWGExportOptions dWGExportOptions = GetDWGExportOptions(doc);
+            // Get dwg export options
+            DWGExportOptions dWGExportOptions = GetDWGExportOptions(doc);
 
-                // Create a list, because the method export needs it
-                List<ElementId> viewSheets = new List<ElementId> { tempViewSheet.Id };
+            // Create a list, because the method export needs it
+            List<ElementId> viewSheets = new List<ElementId> { tempViewSheet.Id };
 
-                // Export
-                doc.Export(this.Directory, this._dwgName, viewSheets, dWGExportOptions);
+            // Export
+            doc.Export(this.Directory, this._dwgName, viewSheets, dWGExportOptions);
 
-                // Creating view
-                ViewFamilyType viewFamilyType = (from element in (new List<Element>
-                                                                (new FilteredElementCollector(doc)
-                                                                      .OfClass(typeof(ViewFamilyType))
-                                                                      .ToElements()).ToList())
-                                                 where (element as ViewFamilyType).ViewFamily.Equals(ViewFamily.Drafting)
-                                                 select (element as ViewFamilyType))
-                                                .First();
-                View draftingView = ViewDrafting.Create(doc, viewFamilyType.Id);
+            // Creating view
+            ViewFamilyType viewFamilyType = (from element in (new List<Element>
+                                                            (new FilteredElementCollector(doc)
+                                                                    .OfClass(typeof(ViewFamilyType))
+                                                                    .ToElements()).ToList())
+                                                where (element as ViewFamilyType).ViewFamily.Equals(ViewFamily.Drafting)
+                                                select (element as ViewFamilyType))
+                                            .First();
+            View draftingView = ViewDrafting.Create(doc, viewFamilyType.Id);
 
-                // Import
-                ElementId elementId;
-                doc.Import(this.Directory + "\\" + this._dwgName + ".dwg", new DWGImportOptions(), draftingView, out elementId);
+            // Import
+            ElementId elementId;
+            doc.Import(this.Directory + "\\" + this._dwgName + ".dwg", new DWGImportOptions(), draftingView, out elementId);
 
-                // Deleting aux ViewSheet and DWG
-                doc.Delete(tempViewSheet.Id);
-                File.Delete(this.Directory + "\\" + this._dwgName + ".dwg");
-            }
-            catch
-            {
-                MessageBox.Show(String.Format("Houve um erro ao congelar a vista {0}. " +
-                    "Verifique se ela possui algum elemento visual.", view.Name),
-                    "Congelar vistas");
-            }
+            // Deleting aux ViewSheet and DWG
+            doc.Delete(tempViewSheet.Id);
+            File.Delete(this.Directory + "\\" + this._dwgName + ".dwg");
+            //}
+            //catch
+            //{
+            //    MessageBox.Show(String.Format("Houve um erro ao congelar a vista {0}. " +
+            //        "Verifique se ela possui algum elemento visual.", view.Name),
+            //        "Congelar vistas");
+            //}
         }
     }
 }
