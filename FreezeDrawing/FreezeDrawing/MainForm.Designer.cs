@@ -80,7 +80,6 @@
             this.btn_Options.TabIndex = 2;
             this.btn_Options.Text = "Opções";
             this.btn_Options.UseVisualStyleBackColor = true;
-            this.btn_Options.Visible = false;
             this.btn_Options.Click += new System.EventHandler(this.btn_Options_Click);
             // 
             // btn_Cancel

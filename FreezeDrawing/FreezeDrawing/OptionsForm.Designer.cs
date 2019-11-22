@@ -31,18 +31,16 @@
             this.gbx_ExportOption = new System.Windows.Forms.GroupBox();
             this.cbbx_DWGExportOptions = new System.Windows.Forms.ComboBox();
             this.gbx_ImportColors = new System.Windows.Forms.GroupBox();
-            this.rbtn_BlackAndWhite = new System.Windows.Forms.RadioButton();
-            this.rbtn_Preserve = new System.Windows.Forms.RadioButton();
             this.rbtn_Invert = new System.Windows.Forms.RadioButton();
+            this.rbtn_Preserve = new System.Windows.Forms.RadioButton();
+            this.rbtn_BlackAndWhite = new System.Windows.Forms.RadioButton();
             this.gbx_View = new System.Windows.Forms.GroupBox();
             this.cbx_DeleteSourceView = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cbx_CopyDWGToFolder = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbx_BaseName = new System.Windows.Forms.TextBox();
-            this.tbx_Folder = new System.Windows.Forms.TextBox();
             this.btn_BrowseFolder = new System.Windows.Forms.Button();
+            this.tbx_FolderToSave = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbx_CopyDWGToFolder = new System.Windows.Forms.CheckBox();
             this.btn_OK = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.gbx_ExportOption.SuspendLayout();
@@ -87,17 +85,17 @@
             this.gbx_ImportColors.TabStop = false;
             this.gbx_ImportColors.Text = "Cores de importação";
             // 
-            // rbtn_BlackAndWhite
+            // rbtn_Invert
             // 
-            this.rbtn_BlackAndWhite.AutoSize = true;
-            this.rbtn_BlackAndWhite.Location = new System.Drawing.Point(6, 23);
-            this.rbtn_BlackAndWhite.Name = "rbtn_BlackAndWhite";
-            this.rbtn_BlackAndWhite.Size = new System.Drawing.Size(95, 17);
-            this.rbtn_BlackAndWhite.TabIndex = 0;
-            this.rbtn_BlackAndWhite.TabStop = true;
-            this.rbtn_BlackAndWhite.Text = "Preto e branco";
-            this.rbtn_BlackAndWhite.UseVisualStyleBackColor = true;
-            this.rbtn_BlackAndWhite.CheckedChanged += new System.EventHandler(this.rbtn_BlackAndWhite_CheckedChanged);
+            this.rbtn_Invert.AutoSize = true;
+            this.rbtn_Invert.Location = new System.Drawing.Point(6, 82);
+            this.rbtn_Invert.Name = "rbtn_Invert";
+            this.rbtn_Invert.Size = new System.Drawing.Size(61, 17);
+            this.rbtn_Invert.TabIndex = 2;
+            this.rbtn_Invert.TabStop = true;
+            this.rbtn_Invert.Text = "Inverter";
+            this.rbtn_Invert.UseVisualStyleBackColor = true;
+            this.rbtn_Invert.CheckedChanged += new System.EventHandler(this.rbtn_Invert_CheckedChanged);
             // 
             // rbtn_Preserve
             // 
@@ -111,17 +109,17 @@
             this.rbtn_Preserve.UseVisualStyleBackColor = true;
             this.rbtn_Preserve.CheckedChanged += new System.EventHandler(this.rbtn_Preserve_CheckedChanged);
             // 
-            // rbtn_Invert
+            // rbtn_BlackAndWhite
             // 
-            this.rbtn_Invert.AutoSize = true;
-            this.rbtn_Invert.Location = new System.Drawing.Point(6, 82);
-            this.rbtn_Invert.Name = "rbtn_Invert";
-            this.rbtn_Invert.Size = new System.Drawing.Size(61, 17);
-            this.rbtn_Invert.TabIndex = 2;
-            this.rbtn_Invert.TabStop = true;
-            this.rbtn_Invert.Text = "Inverter";
-            this.rbtn_Invert.UseVisualStyleBackColor = true;
-            this.rbtn_Invert.CheckedChanged += new System.EventHandler(this.rbtn_Invert_CheckedChanged);
+            this.rbtn_BlackAndWhite.AutoSize = true;
+            this.rbtn_BlackAndWhite.Location = new System.Drawing.Point(6, 23);
+            this.rbtn_BlackAndWhite.Name = "rbtn_BlackAndWhite";
+            this.rbtn_BlackAndWhite.Size = new System.Drawing.Size(95, 17);
+            this.rbtn_BlackAndWhite.TabIndex = 0;
+            this.rbtn_BlackAndWhite.TabStop = true;
+            this.rbtn_BlackAndWhite.Text = "Preto e branco";
+            this.rbtn_BlackAndWhite.UseVisualStyleBackColor = true;
+            this.rbtn_BlackAndWhite.CheckedChanged += new System.EventHandler(this.rbtn_BlackAndWhite_CheckedChanged);
             // 
             // gbx_View
             // 
@@ -142,21 +140,50 @@
             this.cbx_DeleteSourceView.TabIndex = 0;
             this.cbx_DeleteSourceView.Text = "Deletar vista de origem";
             this.cbx_DeleteSourceView.UseVisualStyleBackColor = true;
+            this.cbx_DeleteSourceView.CheckedChanged += new System.EventHandler(this.cbx_DeleteSourceView_CheckedChanged);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btn_BrowseFolder);
-            this.groupBox4.Controls.Add(this.tbx_Folder);
-            this.groupBox4.Controls.Add(this.tbx_BaseName);
+            this.groupBox4.Controls.Add(this.tbx_FolderToSave);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.cbx_CopyDWGToFolder);
             this.groupBox4.Location = new System.Drawing.Point(13, 133);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(421, 96);
+            this.groupBox4.Size = new System.Drawing.Size(421, 73);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Arquivos";
+            // 
+            // btn_BrowseFolder
+            // 
+            this.btn_BrowseFolder.Enabled = false;
+            this.btn_BrowseFolder.Location = new System.Drawing.Point(383, 42);
+            this.btn_BrowseFolder.Name = "btn_BrowseFolder";
+            this.btn_BrowseFolder.Size = new System.Drawing.Size(32, 23);
+            this.btn_BrowseFolder.TabIndex = 1;
+            this.btn_BrowseFolder.Text = "...";
+            this.btn_BrowseFolder.UseVisualStyleBackColor = true;
+            this.btn_BrowseFolder.Click += new System.EventHandler(this.btn_BrowseFolder_Click);
+            // 
+            // tbx_FolderToSave
+            // 
+            this.tbx_FolderToSave.Enabled = false;
+            this.tbx_FolderToSave.Location = new System.Drawing.Point(83, 44);
+            this.tbx_FolderToSave.Name = "tbx_FolderToSave";
+            this.tbx_FolderToSave.Size = new System.Drawing.Size(294, 20);
+            this.tbx_FolderToSave.TabIndex = 4;
+            this.tbx_FolderToSave.TextChanged += new System.EventHandler(this.tbx_FolderToSave_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Pasta";
             // 
             // cbx_CopyDWGToFolder
             // 
@@ -170,53 +197,9 @@
             this.cbx_CopyDWGToFolder.UseVisualStyleBackColor = true;
             this.cbx_CopyDWGToFolder.CheckedChanged += new System.EventHandler(this.cbx_CopyDWGToFolder_CheckedChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 46);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome base";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 69);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Pasta";
-            // 
-            // tbx_BaseName
-            // 
-            this.tbx_BaseName.Location = new System.Drawing.Point(83, 41);
-            this.tbx_BaseName.Name = "tbx_BaseName";
-            this.tbx_BaseName.Size = new System.Drawing.Size(294, 20);
-            this.tbx_BaseName.TabIndex = 3;
-            // 
-            // tbx_Folder
-            // 
-            this.tbx_Folder.Location = new System.Drawing.Point(83, 67);
-            this.tbx_Folder.Name = "tbx_Folder";
-            this.tbx_Folder.Size = new System.Drawing.Size(294, 20);
-            this.tbx_Folder.TabIndex = 4;
-            // 
-            // btn_BrowseFolder
-            // 
-            this.btn_BrowseFolder.Location = new System.Drawing.Point(383, 65);
-            this.btn_BrowseFolder.Name = "btn_BrowseFolder";
-            this.btn_BrowseFolder.Size = new System.Drawing.Size(32, 23);
-            this.btn_BrowseFolder.TabIndex = 1;
-            this.btn_BrowseFolder.Text = "...";
-            this.btn_BrowseFolder.UseVisualStyleBackColor = true;
-            this.btn_BrowseFolder.Click += new System.EventHandler(this.btn_BrowseFolder_Click);
-            // 
             // btn_OK
             // 
-            this.btn_OK.Location = new System.Drawing.Point(278, 235);
+            this.btn_OK.Location = new System.Drawing.Point(278, 212);
             this.btn_OK.Name = "btn_OK";
             this.btn_OK.Size = new System.Drawing.Size(75, 23);
             this.btn_OK.TabIndex = 5;
@@ -226,7 +209,7 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(359, 235);
+            this.btn_Cancel.Location = new System.Drawing.Point(359, 212);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 6;
@@ -238,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 271);
+            this.ClientSize = new System.Drawing.Size(446, 244);
             this.Controls.Add(this.btn_OK);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.groupBox4);
@@ -249,6 +232,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Opções";
+            this.Load += new System.EventHandler(this.OptionsForm_Load);
             this.gbx_ExportOption.ResumeLayout(false);
             this.gbx_ImportColors.ResumeLayout(false);
             this.gbx_ImportColors.PerformLayout();
@@ -271,10 +255,8 @@
         private System.Windows.Forms.GroupBox gbx_View;
         private System.Windows.Forms.CheckBox cbx_DeleteSourceView;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox tbx_Folder;
-        private System.Windows.Forms.TextBox tbx_BaseName;
+        private System.Windows.Forms.TextBox tbx_FolderToSave;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbx_CopyDWGToFolder;
         private System.Windows.Forms.Button btn_BrowseFolder;
         private System.Windows.Forms.Button btn_OK;

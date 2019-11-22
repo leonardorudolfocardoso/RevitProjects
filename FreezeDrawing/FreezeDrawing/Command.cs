@@ -18,7 +18,6 @@ namespace FreezeDrawing
     [Transaction(TransactionMode.Manual)]
     public class Command : IExternalCommand
     {
-        String _setupName = "BFS";
         String _dwgName = "temp";
         
         private String Directory { get; set; }
@@ -52,14 +51,46 @@ namespace FreezeDrawing
             Transaction tx = new Transaction(doc, "Congelar desenho");
             tx.Start();
 
-            foreach (View view in mainForm.SelectedViews)
+            try
             {
-                View viewCopy = doc.GetElement(view.Duplicate(ViewDuplicateOption.Duplicate)) as View;
-                FreezeDrawing(doc, viewCopy);
-                doc.Delete(viewCopy.Id);
+                foreach (View view in mainForm.SelectedViews)
+                {
+                    View viewCopy = doc.GetElement(view.Duplicate(ViewDuplicateOption.Duplicate)) as View;
+                    FreezeDrawing(doc, viewCopy, mainForm.OptionsForm, view.Name);
+                    doc.Delete(viewCopy.Id);
+
+                    // delete view if in options form
+                    if (mainForm.OptionsForm.DeleteView)
+                    {
+                        try
+                        {
+                            doc.Delete(view.Id);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Aviso");
+                        }
+                    }
+                }
+
+                tx.Commit();
+            }
+            catch (Exception ex)
+            {
+                tx.RollBack();
+                MessageBox.Show(ex.Message, "Erro");
+                return Result.Failed;
             }
 
-            tx.Commit();
+            if (mainForm.OptionsForm.CopyDWGToFolder)
+            {
+                ProcessStartInfo processStartInfo = new ProcessStartInfo()
+                {
+                    Arguments = mainForm.OptionsForm.FolderToSave,
+                    FileName = "explorer.exe",
+                };
+                Process.Start(processStartInfo);
+            }
 
             return Result.Succeeded;
         }
@@ -67,17 +98,18 @@ namespace FreezeDrawing
         private ViewSheet CreateViewSheetToExport(Document doc)
         {
             // Gets a TitleBlock to create tempViewSheet
-            ElementId titleBlockId = new List<ElementId>(new FilteredElementCollector(doc)
+            Element titleBlock = new List<Element>(new FilteredElementCollector(doc)
                                                             .OfCategory(BuiltInCategory.OST_TitleBlocks)
-                                                            .ToElementIds())[0];
+                                                            .WhereElementIsElementType()
+                                                            .ToElements())[0];
 
 
 
             // Creates tempViewSheet to export to DWG
-            ViewSheet tempViewSheet = ViewSheet.Create(doc, titleBlockId);
+            ViewSheet tempViewSheet = ViewSheet.Create(doc, titleBlock.Id);
 
             // Collects TitleBlock in tempViewSheet to delete it
-            titleBlockId = new List<ElementId>(new FilteredElementCollector(doc)
+            ElementId titleBlockId = new List<ElementId>(new FilteredElementCollector(doc)
                                                   .OfCategory(BuiltInCategory.OST_TitleBlocks)
                                                   .OwnedByView(tempViewSheet.Id)
                                                   .ToElementIds())[0];
@@ -86,67 +118,65 @@ namespace FreezeDrawing
             return tempViewSheet;
         }
 
-        private DWGExportOptions GetDWGExportOptions(Document doc)
+
+        private void FreezeDrawing(Document doc, View view, OptionsForm optionsForm, String viewName)
         {
-            // Gets the predefined setup names
-            List<string> setupNames = BaseExportOptions.GetPredefinedSetupNames(doc).ToList();
-
-            if (!(from name in setupNames select name.ToLower()).Contains(_setupName.ToLower()))
-            {
-                System.Windows.Forms.MessageBox.Show(String.Format("Não há configuração de exportação." +
-                    "Crie uma configuração com nome {0}, que será utilizada para exportar.", _setupName));
-                return null;
-            }
-            DWGExportOptions dWGExportOptions = DWGExportOptions.GetPredefinedOptions(doc, _setupName);
-
-            return dWGExportOptions;
-        }
-
-        private void FreezeDrawing(Document doc, View view)
-        {
-            //try
-            //{
             // Create the ViewSheetToExport
             ViewSheet tempViewSheet = CreateViewSheetToExport(doc);
-            doc.Regenerate();
 
             // Create the viewport with the view on tempViewSheet
             _ = Viewport.Create(doc, tempViewSheet.Id, view.Id, new XYZ());
-            doc.Regenerate();
 
-            // Get dwg export options
-            DWGExportOptions dWGExportOptions = GetDWGExportOptions(doc);
 
             // Create a list, because the method export needs it
             List<ElementId> viewSheets = new List<ElementId> { tempViewSheet.Id };
 
             // Export
-            doc.Export(this.Directory, this._dwgName, viewSheets, dWGExportOptions);
+            doc.Export(this.Directory, this._dwgName, viewSheets, 
+                DWGExportOptions.GetPredefinedOptions(doc, optionsForm.DWGExportOptionsName));
+
+            // Copying file according to optionsForm
+            if (optionsForm.CopyDWGToFolder)
+            {
+                // try to copy
+                try
+                {
+                    File.Copy(this.Directory + "\\" + this._dwgName + ".dwg",
+                        String.Join("\\", optionsForm.FolderToSave, viewName + ".dwg"));
+                }
+                
+                catch (IOException ex)
+                {
+                    if (MessageBox.Show(ex.Message + " Deseja substituir arquivo?", 
+                        "Substituir arquivo", 
+                        MessageBoxButtons.YesNo) 
+                        == DialogResult.Yes)
+                    {
+                        File.Copy(this.Directory + "\\" + this._dwgName + ".dwg",
+                            String.Join("\\", optionsForm.FolderToSave, viewName + ".dwg"), true);
+                    }
+                }
+            }
+
 
             // Creating view
             ViewFamilyType viewFamilyType = (from element in (new List<Element>
-                                                            (new FilteredElementCollector(doc)
-                                                                    .OfClass(typeof(ViewFamilyType))
-                                                                    .ToElements()).ToList())
-                                                where (element as ViewFamilyType).ViewFamily.Equals(ViewFamily.Drafting)
-                                                select (element as ViewFamilyType))
-                                            .First();
+                                                        (new FilteredElementCollector(doc)
+                                                                .OfClass(typeof(ViewFamilyType))
+                                                                .ToElements()).ToList())
+                                            where (element as ViewFamilyType).ViewFamily.Equals(ViewFamily.Drafting)
+                                            select (element as ViewFamilyType))
+                                        .First();
             View draftingView = ViewDrafting.Create(doc, viewFamilyType.Id);
 
             // Import
             ElementId elementId;
-            doc.Import(this.Directory + "\\" + this._dwgName + ".dwg", new DWGImportOptions(), draftingView, out elementId);
+            doc.Import(this.Directory + "\\" + this._dwgName + ".dwg", 
+                optionsForm.DWGImportOptions, draftingView, out elementId);
 
-            // Deleting aux ViewSheet and DWG
+            // Deleting aux ViewSheet (according to optionsForm and DWG
             doc.Delete(tempViewSheet.Id);
             File.Delete(this.Directory + "\\" + this._dwgName + ".dwg");
-            //}
-            //catch
-            //{
-            //    MessageBox.Show(String.Format("Houve um erro ao congelar a vista {0}. " +
-            //        "Verifique se ela possui algum elemento visual.", view.Name),
-            //        "Congelar vistas");
-            //}
         }
     }
 }

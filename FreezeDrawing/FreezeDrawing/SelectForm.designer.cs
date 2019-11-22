@@ -69,6 +69,7 @@ namespace FreezeDrawing
             // 
             this.checkedListBox_instances.CheckOnClick = true;
             this.checkedListBox_instances.FormattingEnabled = true;
+            this.checkedListBox_instances.HorizontalScrollbar = true;
             this.checkedListBox_instances.Location = new System.Drawing.Point(257, 34);
             this.checkedListBox_instances.Name = "checkedListBox_instances";
             this.checkedListBox_instances.Size = new System.Drawing.Size(237, 274);
@@ -150,9 +151,9 @@ namespace FreezeDrawing
             // 
             this.button7.AutoSize = true;
             this.button7.CausesValidation = false;
-            this.button7.Location = new System.Drawing.Point(338, 343);
+            this.button7.Location = new System.Drawing.Point(332, 343);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(81, 23);
             this.button7.TabIndex = 10;
             this.button7.Text = "Selecionar";
             this.button7.UseVisualStyleBackColor = true;
@@ -168,7 +169,7 @@ namespace FreezeDrawing
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // SelectForm
+            // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,9 +187,7 @@ namespace FreezeDrawing
             this.Controls.Add(this.checkedListBox_types);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SelectForm";
+            this.Name = "AppForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Selecionar vistas";

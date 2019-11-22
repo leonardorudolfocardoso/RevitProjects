@@ -14,25 +14,33 @@ namespace FreezeDrawing
 {
     public partial class OptionsForm : Form
     {
-        public DWGExportOptions DWGExportOptions { get; set; }
-        public DWGImportOptions DWGImportOptions { get; set; }
-        public String Folder { get; set; }
-        public String BaseName { get; set; }
-        public OptionsForm(List<DWGExportOptions> dWGExportOptions)
+        public String DWGExportOptionsName { get; private set; }
+        public DWGImportOptions DWGImportOptions { get; private set; }
+        public String Folder { get; private set; }
+        public String FolderToSave { get; private set; }
+        public bool CopyDWGToFolder { get; private set; }
+        public bool DeleteView { get; private set; }
+        public OptionsForm(List<String> dWGExportOptionsNames)
         {
-            this.DWGExportOptions = new DWGExportOptions();
             this.DWGImportOptions = new DWGImportOptions();
+
             InitializeComponent();
-            foreach (DWGExportOptions dWGExportOption in dWGExportOptions)
+            foreach (String dWGExportOptionsName in dWGExportOptionsNames)
             {
-                cbbx_DWGExportOptions.Items.Add(dWGExportOption); 
+                cbbx_DWGExportOptions.Items.Add(dWGExportOptionsName); 
             }
+            this.cbbx_DWGExportOptions.SelectedIndex = 0;
+            this.cbx_DeleteSourceView.Checked = false;
+            this.rbtn_Preserve.Checked = true;
+            this.cbx_CopyDWGToFolder.Checked = false;
         }
 
         private void cbx_CopyDWGToFolder_CheckedChanged(object sender, EventArgs e)
         {
-            tbx_BaseName.Enabled = !cbx_CopyDWGToFolder.Checked;
-            tbx_Folder.Enabled = !cbx_CopyDWGToFolder.Checked;
+            tbx_FolderToSave.Enabled = cbx_CopyDWGToFolder.Checked;
+            btn_BrowseFolder.Enabled = cbx_CopyDWGToFolder.Checked;
+
+            this.CopyDWGToFolder = cbx_CopyDWGToFolder.Checked;
         }
 
         private void rbtn_BlackAndWhite_CheckedChanged(object sender, EventArgs e)
@@ -53,15 +61,13 @@ namespace FreezeDrawing
         private void btn_BrowseFolder_Click(object sender, EventArgs e)
         {
             // SaveFileDialog form
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            DialogResult dialogResult = saveFileDialog.ShowDialog();
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            DialogResult dialogResult = folderBrowserDialog.ShowDialog();
 
             switch (dialogResult)
             {
                 case DialogResult.OK:
-                    List<String> splittedFileName = saveFileDialog.FileName.Split('\\').ToList();
-                    this.Folder = String.Join("\\", splittedFileName.GetRange(0, splittedFileName.Count() - 2));
-                    this.BaseName = splittedFileName.Last();
+                    tbx_FolderToSave.Text = folderBrowserDialog.SelectedPath;
                     break;
                 case DialogResult.Cancel:
                     break;
@@ -83,7 +89,21 @@ namespace FreezeDrawing
 
         private void cbbx_DWGExportOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.DWGExportOptions = cbbx_DWGExportOptions.SelectedItem as DWGExportOptions;
+            this.DWGExportOptionsName = cbbx_DWGExportOptions.SelectedItem.ToString();
+        }
+
+        private void OptionsForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void cbx_DeleteSourceView_CheckedChanged(object sender, EventArgs e)
+        {
+            this.DeleteView = cbx_DeleteSourceView.Checked;
+        }
+
+        private void tbx_FolderToSave_TextChanged(object sender, EventArgs e)
+        {
+            this.FolderToSave = tbx_FolderToSave.Text;
         }
     }
 }
