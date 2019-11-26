@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command ManageLevels</Text>
+    <Description>Some description for ManageLevels</Description>
+    <Assembly>ManageLevels.dll</Assembly>
+    <FullClassName>ManageLevels.Command</FullClassName>
+    <ClientId>2189cd33-d557-4baf-b434-53b434d6b0c4</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application ManageLevels</Name>
+    <Assembly>ManageLevels.dll</Assembly>
+    <FullClassName>ManageLevels.App</FullClassName>
+    <ClientId>5dfe4884-9453-4bad-8472-f41673666432</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>
