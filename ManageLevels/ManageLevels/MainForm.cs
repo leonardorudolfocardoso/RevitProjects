@@ -56,5 +56,11 @@ namespace ManageLevels
             ManageLevelsForm manageLevelsForm = new ManageLevelsForm(this.FormDoc);
             manageLevelsForm.ShowDialog();
         }
+
+        private void btn_RenameLevel_Click(object sender, EventArgs e)
+        {
+            RenameForm renameForm = new RenameForm(this.FormDoc);
+            renameForm.ShowDialog();
+        }
     }
 }

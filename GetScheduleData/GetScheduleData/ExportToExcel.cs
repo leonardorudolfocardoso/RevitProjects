@@ -32,7 +32,10 @@ namespace GetScheduleData
             { "COM", "Projeto de Comunicação" },
             { "SPDA", "Projeto de Prevenção de Descargas Atmosféricas" },
             { "GAS", "Projeto de Instalações de Gás" },
-            { "PCI", "Projeto de Prevenção e Combate a Incêndios" }
+            { "PCI", "Projeto de Prevenção e Combate a Incêndios" },
+            { "SOM", "Projeto de Som" },
+            { "CIE", "Projeto de Contenção de Incêndio na Exaustão" },
+            { "CO2", "Projeto de Contenção de Incêndio na Exaustão" }
         };
 
         public string filePath { get => _fileName; set => _fileName = value; }
@@ -43,7 +46,7 @@ namespace GetScheduleData
         public Excel._Workbook Workbook { get => _workbook; set => _workbook = value; }
         #endregion
 
-        public enum TemplateType { QUANTITATIVO };
+        public enum TemplateType { QUANTIDADES };
 
         public ExportToExcel(string file_name,
             string sheet_name,
@@ -79,17 +82,17 @@ namespace GetScheduleData
             // adjusting template header
             oSheet.PageSetup.LeftHeaderPicture.Filename = "Z:\\BFS Revit Extensions\\logo.png";
             oSheet.PageSetup.LeftHeader = "&G";
-            oSheet.PageSetup.CenterHeader = String.Format("&\"Arial Black\"&14PLANILHA\nDE\n{0}", templateType.ToString());
+            oSheet.PageSetup.CenterHeader = String.Format("&\"Arial Black\"&14PLANILHA DE\n{0}", templateType.ToString());
             string rightHeaderText = String.Format("DOC.: {0}\nDATA:{1}\nREVISÃO:{2}\nETAPA: N/A",
                                                    bfsDocument.Codigo,
-                                                   System.DateTime.Now.Date.ToShortDateString(),
+                                                   bfsDocument.Data,
                                                    bfsDocument.Revisao);
             oSheet.PageSetup.RightHeader = String.Format("&R&11&\"Calibri, Bold\"{0}", rightHeaderText);
             oSheet.PageSetup.AlignMarginsHeaderFooter = true;
             oSheet.PageSetup.ScaleWithDocHeaderFooter = true;
 
             // adjusting template footer
-            string footer_text1 = "RUA DONA FRANCISCA, 8300, PERINI BUSINESS PARK, ÁGORA HUB, SALA 318, CEP: 89219-600 BAIRRO DISTRITO INDUSTRIAL-JOINVILLE/SC-BRASIL\n";
+            string footer_text1 = "RUA DONA FRANCISCA, 8300, PERINI BUSINESS PARK, ÁGORA HUB, SALA 318, CEP: 89219-600 BAIRRO DISTRITO INDUSTRIAL - JOINVILLE/SC-BRASIL\n";
             string footer_text2 = "BFS ENGENHARIA LTDA ME";
             oSheet.PageSetup.CenterFooter = String.Format("&\"Arial\"&10{0}&\"Arial Black\"&12{1}",
                                                           footer_text1, footer_text2);
@@ -106,17 +109,19 @@ namespace GetScheduleData
             oSheet.Range[oSheet.Cells[0 + 1, 0 + 1], oSheet.Cells[0 + 1, 1 + 1]].Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
             oSheet.Range[oSheet.Cells[0 + 1, 0 + 1], oSheet.Cells[0 + 1, 1 + 1]].Borders.Color = System.Drawing.Color.Orange;
             oSheet.Cells[0+1, 0+1] = "1. DADOS DO PROJETO";
-            oSheet.Cells[1+1, 0+1] = "PROPRIETÁRIO";
-            oSheet.Cells[2+1, 0+1] = "ENDEREÇO";
-            oSheet.Cells[3+1, 0+1] = "DISCIPLINA";
+            oSheet.Cells[1+1, 0+1] = "Proprietário";
+            oSheet.Cells[2+1, 0+1] = "Obra";
+            oSheet.Cells[3+1, 0+1] = "Endereço";
+            oSheet.Cells[4+1, 0+1] = "Disciplina";
             oSheet.Cells[1+1, 1+1] = bfsDocument.Proprietario + "\n" + bfsDocument.Cnpj;
             oSheet.Cells[2+1, 1+1] = bfsDocument.Obra;
-            oSheet.Cells[3+1, 1+1] = this.SUBJECT_DIC[bfsDocument.Disciplina];
-            oSheet.Range[oSheet.Cells[0 + 1, 0 + 1], oSheet.Cells[3 + 1, 1 + 1]].Font.Name = "Arial";
+            oSheet.Cells[3+1, 1+1] = bfsDocument.Endereco;
+            oSheet.Cells[4+1, 1+1] = this.SUBJECT_DIC[bfsDocument.Disciplina];
+            oSheet.Range[oSheet.Cells[0 + 1, 0 + 1], oSheet.Cells[4 + 1, 1 + 1]].Font.Name = "Arial";
 
             // styling the project information
             rowAddition = rowCount;
-            for (int i=0; i<4; i++)
+            for (int i=0; i<5; i++)
             {
                 for(int j=0; j<2; j++)
                 {

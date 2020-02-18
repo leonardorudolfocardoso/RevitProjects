@@ -47,12 +47,16 @@ namespace ManageLevels
 
             Document linkDoc = this.RevitLinkNameDic[this.cbx_RevitLinks.SelectedItem.ToString()]
                                    .GetLinkDocument();
-            FilteredElementCollector revitLinkLevelsCollector = new FilteredElementCollector(linkDoc)
+            List<Level> revitLinkLevels = new FilteredElementCollector(linkDoc)
                 .OfCategory(BuiltInCategory.OST_Levels)
-                .WhereElementIsNotElementType();
+                .WhereElementIsNotElementType()
+                .ToElements()
+                .Cast<Level>()
+                .OrderByDescending(x => x.Elevation)
+                .ToList();
 
             // populating LevelNameDic lb_RevitLinkLevels
-            foreach (Level level in revitLinkLevelsCollector)
+            foreach (Level level in revitLinkLevels)
             {
                 this.LevelNameDic.Add(level.Name, level);
                 this.lb_RevitLinkLevels.Items.Add(level.Name);

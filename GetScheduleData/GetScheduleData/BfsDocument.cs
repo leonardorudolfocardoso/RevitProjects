@@ -10,16 +10,17 @@ namespace GetScheduleData
 {
     class BfsDocument
     {
-        public Document Doc { get; set; }
-        public string Proprietario {get; set;}
-        public string Cnpj { get; set; }
-        public string Obra { get; set; }
-        public string Endereco { get; set; }
-        public string Disciplina { get; set; }
-        public string Numero { get; set; }
-        public int Ano { get; set; }
-        public string Codigo { get; set; }
-        public string Revisao { get; set; }
+        public Document Doc { get; private set; }
+        public string Proprietario {get; private set;}
+        public string Cnpj { get; private set; }
+        public string Obra { get; private set; }
+        public string Endereco { get; private set; }
+        public string Disciplina { get; private set; }
+        public string Numero { get; private set; }
+        public int Ano { get; private set; }
+        public string Codigo { get; private set; }
+        public string Revisao { get; private set; }
+        public string Data { get; private set; }
 
         public BfsDocument(Document doc)
         {
@@ -49,6 +50,7 @@ namespace GetScheduleData
                 this.Revisao = (new FilteredElementCollector(this.Doc)
                                    .OfClass(typeof(Revision))
                                    .ToElements()[0] as Revision).RevisionNumber;
+                this.Data = info.LookupParameter("Data de emissão do projeto").AsString();
             //}
             //catch(Exception){
             //    MessageBox.Show("Erro ao coletar informações, verifique os valores em Informações do projeto.", "Erro");

@@ -206,16 +206,33 @@ namespace CreatePlateDetail
                         }
                     }
 
+                    // scale
+                    int scaleValue = 20;
+
                     // configuring vertical view properties
                     vView.Name = MakeViewNames(plateType)[0];
                     vView.DetailLevel = ViewDetailLevel.Fine;
                     vView.DisplayStyle = DisplayStyle.FlatColors;
                     vView.CropBoxVisible = false;
+                    vView.Scale = scaleValue;
 
-                    // creating textNote
-                    textNote = TextNote.Create(doc, vView.Id, vBbox.Transform.Origin + new XYZ(0, -12, 3), "teste", defaultTextNoteTypeId);
-                    leader = textNote.AddLeader(TextNoteLeaderTypes.TNLT_STRAIGHT_R);
-                    leader.End = vBbox.Transform.Origin + new XYZ(0, -5, 0);
+                    // creating textNotes
+                    String text0 = "LIGAÇÃO COLUNA X CHAPA \nFEITA ATRAVÉS DE SOLDA";
+                    textNote = TextNote.Create(doc, vView.Id, vBbox.Transform.Origin + new XYZ(0, 12, 3), text0, defaultTextNoteTypeId);
+                    //leader = textNote.AddLeader(TextNoteLeaderTypes.TNLT_STRAIGHT_R);
+                    //leader.End = vBbox.Transform.Origin + new XYZ(0, -5, 0);
+                    
+                    String text1 = "CHUMBAR CHAPA COM ADESIVO \nEPOXI SIKADUR 32 OU SIMILAR" +
+                                   "\nVERIFICAR MODO DE UTILIZAÇÃO \nJUNTO AO FORNECEDOR";
+                    textNote = TextNote.Create(doc, vView.Id, vBbox.Transform.Origin + new XYZ(0, 12, 3), text1, defaultTextNoteTypeId);
+                    //leader = textNote.AddLeader(TextNoteLeaderTypes.TNLT_STRAIGHT_L);
+                    //leader.End = vBbox.Transform.Origin + new XYZ(0, -50, 0);
+
+                    String text2 = "PREENCHER COM EPS";
+                    textNote = TextNote.Create(doc, vView.Id, vBbox.Transform.Origin + new XYZ(0, 12, 3), text2, defaultTextNoteTypeId);
+
+                    String text3 = "CHUMBAR CHAPA \nCOM ADESIVO EPOXI";
+                    textNote = TextNote.Create(doc, vView.Id, vBbox.Transform.Origin + new XYZ(0, 12, 3), text3, defaultTextNoteTypeId);
 
                     // creating horizontal view section
                     ViewSection hView = ViewSection.CreateDetail(doc, viewFamilyTypeD.Id, hBbox);
@@ -235,6 +252,7 @@ namespace CreatePlateDetail
                     hView.DetailLevel = ViewDetailLevel.Fine;
                     hView.DisplayStyle = DisplayStyle.HLR;
                     hView.CropBoxVisible = false;
+                    hView.Scale = scaleValue;
 
                     // adding type handled to list
                     typesHandled.Add(String.Format("tipo {0}", (plateType).ToString()));
@@ -286,8 +304,8 @@ namespace CreatePlateDetail
         private List<string> MakeViewNames(int plateType)
         {
             List<string> names = new List<string>();
-            names.Add("PE-DET - Chapa Tipo " + (plateType).ToString() + " - Detalhe planta");
             names.Add("PE-DET - Chapa Tipo " + (plateType).ToString() + " - Detalhe corte");
+            names.Add("PE-DET - Chapa Tipo " + (plateType).ToString() + " - Detalhe planta");
             return names;
         }
     }

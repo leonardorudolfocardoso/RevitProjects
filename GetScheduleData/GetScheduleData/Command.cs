@@ -42,7 +42,7 @@ namespace GetScheduleData
             saveFileDialog.Title = "Salvar";
             saveFileDialog.DefaultExt = ".xlsx";
             saveFileDialog.Filter = "Excel file|*.xlsx";
-            saveFileDialog.FileName += string.Format("{0}-PLH-Rev.{1}", bfsDocument.Codigo, bfsDocument.Revisao);
+            saveFileDialog.FileName += string.Format("{0}-QTD-Rev.{1}", bfsDocument.Codigo, bfsDocument.Revisao);
             saveFileDialog.OverwritePrompt = false;
 
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -51,12 +51,12 @@ namespace GetScheduleData
                 // creating export to excel instance
                 ExportToExcel exportToExcel = new ExportToExcel(
                     saveFileDialog.FileName,
-                    "Planilha de quantitativos",
+                    "Planilha de quantidades",
                     schedulesData,
                     revisionData);
 
                 // solving export
-                exportToExcel.Export(ExportToExcel.TemplateType.QUANTITATIVO, bfsDocument);
+                exportToExcel.Export(ExportToExcel.TemplateType.QUANTIDADES, bfsDocument);
 
                 // running export() and getting the application created
                 Excel._Application oXL = exportToExcel.Application;
@@ -115,6 +115,7 @@ namespace GetScheduleData
             List<Element> scheduleElements = new List<Element>
                                                 (new FilteredElementCollector(doc)
                                                 .OfCategory(BuiltInCategory.OST_Schedules)
+                                                .WhereElementIsNotElementType()
                                                 .ToElements());
 
             // creating select from list form to choose which schedule to export
@@ -152,8 +153,15 @@ namespace GetScheduleData
 
             List<List<string>> scheduleData = new List<List<string>>();
 
+            if (viewSchedule.IsTitleblockRevisionSchedule) 
+            {
+                scheduleData.Add(new List<string>() { "HISTÓRICO DE REVISÕES" });
+            }
+            else
+            {
+                scheduleData.Add(new List<string>() { viewSchedule.Name });
+            }
 
-            scheduleData.Add(new List<string>() { viewSchedule.Name });
             for (int i = 0; i < nRows; i++)
             {
                 List<string> rowData = new List<string>();

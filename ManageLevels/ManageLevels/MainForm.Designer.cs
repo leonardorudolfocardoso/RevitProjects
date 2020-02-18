@@ -34,7 +34,7 @@
             this.btn_CopyLevels = new System.Windows.Forms.Button();
             this.btn_AlignLevels = new System.Windows.Forms.Button();
             this.btn_Quit = new System.Windows.Forms.Button();
-            this.btn_ManageLevels = new System.Windows.Forms.Button();
+            this.btn_RenameLevel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_CreateLevel
@@ -59,7 +59,7 @@
             // 
             // btn_CopyLevels
             // 
-            this.btn_CopyLevels.Location = new System.Drawing.Point(13, 73);
+            this.btn_CopyLevels.Location = new System.Drawing.Point(13, 101);
             this.btn_CopyLevels.Name = "btn_CopyLevels";
             this.btn_CopyLevels.Size = new System.Drawing.Size(204, 23);
             this.btn_CopyLevels.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // btn_AlignLevels
             // 
-            this.btn_AlignLevels.Location = new System.Drawing.Point(13, 103);
+            this.btn_AlignLevels.Location = new System.Drawing.Point(13, 130);
             this.btn_AlignLevels.Name = "btn_AlignLevels";
             this.btn_AlignLevels.Size = new System.Drawing.Size(204, 23);
             this.btn_AlignLevels.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // btn_Quit
             // 
-            this.btn_Quit.Location = new System.Drawing.Point(12, 161);
+            this.btn_Quit.Location = new System.Drawing.Point(12, 159);
             this.btn_Quit.Name = "btn_Quit";
             this.btn_Quit.Size = new System.Drawing.Size(204, 23);
             this.btn_Quit.TabIndex = 4;
@@ -87,23 +87,22 @@
             this.btn_Quit.UseVisualStyleBackColor = true;
             this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
             // 
-            // btn_ManageLevels
+            // btn_RenameLevel
             // 
-            this.btn_ManageLevels.Location = new System.Drawing.Point(12, 132);
-            this.btn_ManageLevels.Name = "btn_ManageLevels";
-            this.btn_ManageLevels.Size = new System.Drawing.Size(204, 23);
-            this.btn_ManageLevels.TabIndex = 5;
-            this.btn_ManageLevels.Text = "Gerenciar níveis";
-            this.btn_ManageLevels.UseVisualStyleBackColor = true;
-            this.btn_ManageLevels.Visible = false;
-            this.btn_ManageLevels.Click += new System.EventHandler(this.btn_ManageLevels_Click);
+            this.btn_RenameLevel.Location = new System.Drawing.Point(12, 72);
+            this.btn_RenameLevel.Name = "btn_RenameLevel";
+            this.btn_RenameLevel.Size = new System.Drawing.Size(204, 23);
+            this.btn_RenameLevel.TabIndex = 5;
+            this.btn_RenameLevel.Text = "Renomear Nível";
+            this.btn_RenameLevel.UseVisualStyleBackColor = true;
+            this.btn_RenameLevel.Click += new System.EventHandler(this.btn_RenameLevel_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 196);
-            this.Controls.Add(this.btn_ManageLevels);
+            this.ClientSize = new System.Drawing.Size(229, 194);
+            this.Controls.Add(this.btn_RenameLevel);
             this.Controls.Add(this.btn_Quit);
             this.Controls.Add(this.btn_AlignLevels);
             this.Controls.Add(this.btn_CopyLevels);
@@ -126,6 +125,6 @@
         private System.Windows.Forms.Button btn_CopyLevels;
         private System.Windows.Forms.Button btn_AlignLevels;
         private System.Windows.Forms.Button btn_Quit;
-        private System.Windows.Forms.Button btn_ManageLevels;
+        private System.Windows.Forms.Button btn_RenameLevel;
     }
 }

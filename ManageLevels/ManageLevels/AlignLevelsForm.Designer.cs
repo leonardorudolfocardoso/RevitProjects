@@ -55,6 +55,7 @@
             this.btn_MoveLevelDown = new System.Windows.Forms.Button();
             this.btn_MoveLevelUp = new System.Windows.Forms.Button();
             this.lbl_Tip = new System.Windows.Forms.Label();
+            this.btn_RenameLevel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             this.cbx_RevitLink.Size = new System.Drawing.Size(163, 21);
             this.cbx_RevitLink.Sorted = true;
             this.cbx_RevitLink.TabIndex = 0;
-            this.cbx_RevitLink.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbx_RevitLink.SelectedIndexChanged += new System.EventHandler(this.cbx_RevitLink_SelectedIndexChanged);
             // 
             // cbx_DocLevel
             // 
@@ -140,7 +141,7 @@
             // 
             // btn_RemoveAllLinkLevels
             // 
-            this.btn_RemoveAllLinkLevels.Location = new System.Drawing.Point(241, 158);
+            this.btn_RemoveAllLinkLevels.Location = new System.Drawing.Point(241, 161);
             this.btn_RemoveAllLinkLevels.Name = "btn_RemoveAllLinkLevels";
             this.btn_RemoveAllLinkLevels.Size = new System.Drawing.Size(75, 23);
             this.btn_RemoveAllLinkLevels.TabIndex = 14;
@@ -160,7 +161,7 @@
             // 
             // btn_RemoveLinkLevel
             // 
-            this.btn_RemoveLinkLevel.Location = new System.Drawing.Point(241, 129);
+            this.btn_RemoveLinkLevel.Location = new System.Drawing.Point(241, 132);
             this.btn_RemoveLinkLevel.Name = "btn_RemoveLinkLevel";
             this.btn_RemoveLinkLevel.Size = new System.Drawing.Size(75, 23);
             this.btn_RemoveLinkLevel.TabIndex = 12;
@@ -227,6 +228,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_RenameLevel);
             this.groupBox2.Controls.Add(this.btn_CreateLevel);
             this.groupBox2.Controls.Add(this.btn_RemoveAllDocLevels);
             this.groupBox2.Controls.Add(this.btn_AddAllDocLevels);
@@ -246,7 +248,7 @@
             // 
             // btn_CreateLevel
             // 
-            this.btn_CreateLevel.Location = new System.Drawing.Point(241, 18);
+            this.btn_CreateLevel.Location = new System.Drawing.Point(160, 18);
             this.btn_CreateLevel.Name = "btn_CreateLevel";
             this.btn_CreateLevel.Size = new System.Drawing.Size(75, 21);
             this.btn_CreateLevel.TabIndex = 17;
@@ -256,7 +258,7 @@
             // 
             // btn_RemoveAllDocLevels
             // 
-            this.btn_RemoveAllDocLevels.Location = new System.Drawing.Point(241, 158);
+            this.btn_RemoveAllDocLevels.Location = new System.Drawing.Point(241, 161);
             this.btn_RemoveAllDocLevels.Name = "btn_RemoveAllDocLevels";
             this.btn_RemoveAllDocLevels.Size = new System.Drawing.Size(75, 23);
             this.btn_RemoveAllDocLevels.TabIndex = 16;
@@ -286,7 +288,7 @@
             // 
             // btn_RemoveLevel
             // 
-            this.btn_RemoveLevel.Location = new System.Drawing.Point(241, 129);
+            this.btn_RemoveLevel.Location = new System.Drawing.Point(241, 132);
             this.btn_RemoveLevel.Name = "btn_RemoveLevel";
             this.btn_RemoveLevel.Size = new System.Drawing.Size(75, 23);
             this.btn_RemoveLevel.TabIndex = 15;
@@ -330,6 +332,16 @@
             this.lbl_Tip.Size = new System.Drawing.Size(353, 13);
             this.lbl_Tip.TabIndex = 8;
             this.lbl_Tip.Text = "Dica: os níveis serão alinhados em pares, conforme disposição nas listas.";
+            // 
+            // btn_RenameLevel
+            // 
+            this.btn_RenameLevel.Location = new System.Drawing.Point(241, 17);
+            this.btn_RenameLevel.Name = "btn_RenameLevel";
+            this.btn_RenameLevel.Size = new System.Drawing.Size(75, 23);
+            this.btn_RenameLevel.TabIndex = 18;
+            this.btn_RenameLevel.Text = "Renomear";
+            this.btn_RenameLevel.UseVisualStyleBackColor = true;
+            this.btn_RenameLevel.Click += new System.EventHandler(this.btn_RenameLevel_Click);
             // 
             // AlignLevelsForm
             // 
@@ -385,5 +397,6 @@
         private System.Windows.Forms.Button btn_RemoveAllDocLevels;
         private System.Windows.Forms.Label lbl_Tip;
         private System.Windows.Forms.Button btn_CreateLevel;
+        private System.Windows.Forms.Button btn_RenameLevel;
     }
 }

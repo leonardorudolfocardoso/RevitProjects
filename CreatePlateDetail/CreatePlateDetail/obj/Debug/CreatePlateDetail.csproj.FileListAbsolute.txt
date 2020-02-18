@@ -5,3 +5,10 @@ C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlateDetail\
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlateDetail\CreatePlateDetail\obj\Debug\CreatePlateDetail.csproj.GenerateResource.cache
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlateDetail\CreatePlateDetail\obj\Debug\CreatePlateDetail.dll
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\CreatePlateDetail\CreatePlateDetail\obj\Debug\CreatePlateDetail.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\CreatePlateDetail\CreatePlateDetail\bin\Debug\CreatePlateDetail.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\CreatePlateDetail\CreatePlateDetail\bin\Debug\CreatePlateDetail.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\CreatePlateDetail\CreatePlateDetail\obj\Debug\CreatePlateDetail.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\CreatePlateDetail\CreatePlateDetail\obj\Debug\CreatePlateDetail.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\CreatePlateDetail\CreatePlateDetail\obj\Debug\CreatePlateDetail.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\CreatePlateDetail\CreatePlateDetail\obj\Debug\CreatePlateDetail.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\CreatePlateDetail\CreatePlateDetail\obj\Debug\CreatePlateDetail.pdb

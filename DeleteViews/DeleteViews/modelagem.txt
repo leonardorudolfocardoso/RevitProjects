@@ -1,0 +1,18 @@
+Funções para gerenciador de níveis:
+	-> Funções base:
+		-> Criar nível:
+			Args: String levelName, double levelElevation;
+			Return: Level newLevel;
+
+		-> Deletar nível (nível):
+			Args: String levelName;
+			Return: void;
+	
+	-> Funções elaboradas:
+		-> Copiar níveis de um Link RVT:
+			Args: List<Level> levelsToCopy;
+			Return: void;
+
+		-> Alinhar níveis (Formulário com integração gráfica para fazer o alinhamento):
+			Args: List<Level> baseLevels, List<Level> levelsToAlign;
+			Return: void;

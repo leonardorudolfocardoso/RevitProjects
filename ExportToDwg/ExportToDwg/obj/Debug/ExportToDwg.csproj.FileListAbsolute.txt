@@ -6,3 +6,11 @@ C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ExportToDwg\Export
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ExportToDwg\ExportToDwg\bin\Debug\ExportToDwg.pdb
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ExportToDwg\ExportToDwg\obj\Debug\ExportToDwg.dll
 C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\csharp\ExportToDwg\ExportToDwg\obj\Debug\ExportToDwg.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\ExportToDwg\ExportToDwg\bin\Debug\ExportToDwg.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\ExportToDwg\ExportToDwg\bin\Debug\ExportToDwg.pdb
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\ExportToDwg\ExportToDwg\obj\Debug\ExportToDwg.csprojAssemblyReference.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\ExportToDwg\ExportToDwg\obj\Debug\ExportToDwg.Properties.Resources.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\ExportToDwg\ExportToDwg\obj\Debug\ExportToDwg.SelectFromList.resources
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\ExportToDwg\ExportToDwg\obj\Debug\ExportToDwg.csproj.GenerateResource.cache
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\ExportToDwg\ExportToDwg\obj\Debug\ExportToDwg.dll
+C:\Users\Cardoso\Documents\Visual Studio 2019\Projects\RevitProjects\ExportToDwg\ExportToDwg\obj\Debug\ExportToDwg.pdb

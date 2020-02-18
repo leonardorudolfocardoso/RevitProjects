@@ -91,11 +91,12 @@
             // 
             // checkedListBox1
             // 
-            this.checkedListBox1.Sorted = true;
             this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.HorizontalScrollbar = true;
             this.checkedListBox1.Location = new System.Drawing.Point(12, 35);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(215, 244);
+            this.checkedListBox1.Sorted = true;
             this.checkedListBox1.TabIndex = 5;
             // 
             // label1

@@ -30,12 +30,16 @@ namespace ManageLevels
             this.clb_Levels.Items.Clear();
 
             // collecting the levels
-            FilteredElementCollector levelCollector = new FilteredElementCollector(this.FormDoc)
+            List<Level> levels = new FilteredElementCollector(this.FormDoc)
                 .OfCategory(BuiltInCategory.OST_Levels)
-                .WhereElementIsNotElementType();
+                .WhereElementIsNotElementType()
+                .ToElements()
+                .Cast<Level>()
+                .OrderByDescending(x => x.Elevation)
+                .ToList();
 
             // populating levelNameDic and clb_Levels
-            foreach (Level level in levelCollector)
+            foreach (Level level in levels)
             {
                 this.LevelNameDic.Add(level.Name, level);
                 this.clb_Levels.Items.Add(level.Name);

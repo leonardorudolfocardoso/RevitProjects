@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command QuickSelect</Text>
+    <Description>Some description for QuickSelect</Description>
+    <Assembly>QuickSelect.dll</Assembly>
+    <FullClassName>QuickSelect.Command</FullClassName>
+    <ClientId>7d574521-0d60-488a-88cf-c23e139ac92f</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application QuickSelect</Name>
+    <Assembly>QuickSelect.dll</Assembly>
+    <FullClassName>QuickSelect.App</FullClassName>
+    <ClientId>0b0f4eb2-e1fa-43cc-92ea-adbd387fdcca</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

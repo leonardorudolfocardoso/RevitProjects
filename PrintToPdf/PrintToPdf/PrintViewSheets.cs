@@ -58,6 +58,9 @@ namespace PrintToPdf
         
         private List<string> GetFilePaths()
         {
+            // creates BfsDocument object
+            BfsDocument bfsDocument = new BfsDocument(this.Doc);
+
             // grabs the document directory
             string directory = this.Doc.PathName;
 
@@ -65,9 +68,7 @@ namespace PrintToPdf
             List<string> splittedDirectory = directory.Split('\\').ToList();
 
             // works with file paths
-            string file_path_prefixtemp = String.Join("\\", splittedDirectory.GetRange(0, splittedDirectory.Count - 2).ToArray());
-            string file_path_midtemp = this.Doc.Title;
-            string file_path_prefix = String.Format("{0}\\{1}", file_path_prefixtemp, file_path_midtemp);
+            string file_path_prefix = String.Join("\\", splittedDirectory.GetRange(0, splittedDirectory.Count - 2).ToArray());
 
             // creates the list to store the file paths
             string filePath;
@@ -76,6 +77,7 @@ namespace PrintToPdf
             // iterates through the sheetViews and sheetSize
             var zip = this.ViewSheets.Zip(this.SheetSizes, (vs, ss) => new { ViewSheet = vs, SheetSize = ss });
             string rev;
+            string viewSheetsCount = this.Doc.ProjectInformation.LookupParameter("Total de folhas").AsString();
 
             foreach(var vs in zip)
             {
@@ -83,8 +85,8 @@ namespace PrintToPdf
                 var sequenceNumber = (this.Doc.GetElement(currentRevision) as Revision).SequenceNumber;
                 rev = String.Format("Rev.{0}", sequenceNumber - 1);
 
-                filePath = String.Format("{0}-{1}_{2}.0{3}-{4}.pdf", file_path_prefix,
-                    rev, vs.ViewSheet.SheetNumber, this.ViewSheetQuantity, vs.SheetSize); 
+                filePath = String.Format("{0}\\{1}-{2}_{3}.{4}-{5}.pdf", file_path_prefix, bfsDocument.Codigo,
+                    bfsDocument.Revisao, vs.ViewSheet.SheetNumber, bfsDocument.TotalDeFolhas, vs.SheetSize); 
                 filePaths.Add(filePath);
             }
             return filePaths;
@@ -231,7 +233,7 @@ namespace PrintToPdf
                         printSettings.Add(printSetting);
                         break;
                     }
-                    if (printSetting == allPrintSettings.Last())
+                    else if (printSetting == allPrintSettings.Last())
                     {
                         throw new Exception(String.Format(
                             "Tamanho de folha {0} não configurada." +

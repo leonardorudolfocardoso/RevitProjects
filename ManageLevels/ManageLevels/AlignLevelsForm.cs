@@ -30,12 +30,24 @@ namespace ManageLevels
         private void AlignLevelsForm_Load(object sender, EventArgs e)
         {
             // LINKS ITEMS
-            FilteredElementCollector linksCollector = new FilteredElementCollector(this.FormDoc)
+            this.LoadLinkLevels();
+
+            // DOC ITEMS
+            this.LoadDocLevels();
+        }
+
+        private void LoadLinkLevels()
+        {
+            List<RevitLinkInstance> linksInstances = new FilteredElementCollector(this.FormDoc)
                 .OfCategory(BuiltInCategory.OST_RvtLinks)
-                .WhereElementIsNotElementType();
+                .WhereElementIsNotElementType()
+                .ToElements()
+                .Cast<RevitLinkInstance>()
+                .OrderBy(x => x.Name)
+                .ToList();
 
             // iterates the links
-            foreach (RevitLinkInstance revitLinkInstance in linksCollector)
+            foreach (RevitLinkInstance revitLinkInstance in linksInstances)
             {
                 // populates the LinkNamesDic
                 this.LinkNamesDic.Add(revitLinkInstance.Name, revitLinkInstance);
@@ -43,14 +55,21 @@ namespace ManageLevels
                 // add the revitLinkInstance name to combobox
                 this.cbx_RevitLink.Items.Add(revitLinkInstance.Name);
             }
+        }
 
+        private void LoadDocLevels()
+        {
             // DOC ITEMS
-            FilteredElementCollector docLevelsCollector = new FilteredElementCollector(this.FormDoc)
+            List<Level> docLevels = new FilteredElementCollector(this.FormDoc)
                 .OfCategory(BuiltInCategory.OST_Levels)
-                .WhereElementIsNotElementType();
+                .WhereElementIsNotElementType()
+                .ToElements()
+                .Cast<Level>()
+                .OrderByDescending(x => x.Elevation)
+                .ToList();
 
             // iterates the levels
-            foreach (Level level in docLevelsCollector)
+            foreach (Level level in docLevels)
             {
                 // populates the docLevelNamesDic
                 this.DocLevelNamesDic.Add(level.Name, level);
@@ -90,7 +109,7 @@ namespace ManageLevels
             this.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbx_RevitLink_SelectedIndexChanged(object sender, EventArgs e)
         {
             // gets the variable selected
             ComboBox comboBox = sender as ComboBox;
@@ -104,12 +123,16 @@ namespace ManageLevels
             this.LinkLevelNamesDic.Clear();
 
             // collects link levels
-            FilteredElementCollector linkLevelsCollector = new FilteredElementCollector(selectedLinkDoc)
+            List<Level> linkLevels = new FilteredElementCollector(selectedLinkDoc)
                 .OfCategory(BuiltInCategory.OST_Levels)
-                .WhereElementIsNotElementType();
+                .WhereElementIsNotElementType()
+                .ToElements()
+                .Cast<Level>()
+                .OrderByDescending(x => x.Elevation)
+                .ToList();
 
             // populates the link levels list box and link levels name dic
-            foreach (Level level in linkLevelsCollector)
+            foreach (Level level in linkLevels)
             {
                 cbx_LinkLevel.Items.Add(level.Name);
                 this.LinkLevelNamesDic.Add(level.Name, level);
@@ -324,6 +347,18 @@ namespace ManageLevels
                 this.cbx_DocLevel.Items.Add(level.Name);
                 this.DocLevelNamesDic.Add(level.Name, level);
             }
+        }
+
+        private void btn_RenameLevel_Click(object sender, EventArgs e)
+        {
+            RenameForm renameForm = new RenameForm(this.FormDoc);
+            renameForm.ShowDialog();
+
+            this.DocLevelNamesDic.Clear();
+            this.lb_DocLevels.Items.Clear();
+            this.cbx_DocLevel.Items.Clear();
+
+            this.LoadDocLevels();
         }
     }
 }

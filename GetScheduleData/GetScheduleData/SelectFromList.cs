@@ -45,8 +45,8 @@ namespace GetScheduleData
             {
                 if (!(element as ViewSchedule).IsTitleblockRevisionSchedule)
                 {
-                    this.ElementsDic.Add(element.Name, element);
-                    checkedListBox1.Items.Add(element.Name);
+                    this.ElementsDic.Add((element as ViewSchedule).Title, element);
+                    checkedListBox1.Items.Add((element as ViewSchedule).Title);
                 }
             }
         }
