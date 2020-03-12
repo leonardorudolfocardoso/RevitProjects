@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command SheetsExport</Text>
+    <Description>Some description for SheetsExport</Description>
+    <Assembly>SheetsExport.dll</Assembly>
+    <FullClassName>SheetsExport.Command</FullClassName>
+    <ClientId>9e4ee22f-8207-42fb-9919-1c1775a021c5</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application SheetsExport</Name>
+    <Assembly>SheetsExport.dll</Assembly>
+    <FullClassName>SheetsExport.App</FullClassName>
+    <ClientId>57e3740b-7c5e-4c98-99fa-666d6af9eae6</ClientId>
+    <VendorId>Leonardo Rudolfo Cardoso</VendorId>
+    <VendorDescription>BFS Engenharia Ltda, http://www.bfsengenharia.com.br/</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportToDwg", "ExportToDwg\ExportToDwg.csproj", "{A23DD33A-889E-4EAD-B91C-A54A02E6E5E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SheetsExport", "SheetsExport\SheetsExport.csproj", "{BBD4C9E7-EFF6-4829-A11C-E6D7AE4E8BE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A23DD33A-889E-4EAD-B91C-A54A02E6E5E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A23DD33A-889E-4EAD-B91C-A54A02E6E5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A23DD33A-889E-4EAD-B91C-A54A02E6E5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A23DD33A-889E-4EAD-B91C-A54A02E6E5E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD4C9E7-EFF6-4829-A11C-E6D7AE4E8BE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD4C9E7-EFF6-4829-A11C-E6D7AE4E8BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD4C9E7-EFF6-4829-A11C-E6D7AE4E8BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD4C9E7-EFF6-4829-A11C-E6D7AE4E8BE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1A710488-F163-4A0E-8373-591B09FE20A5}
+		SolutionGuid = {D08DACB3-A323-4CD6-9294-E259B9403DD0}
 	EndGlobalSection
 EndGlobal

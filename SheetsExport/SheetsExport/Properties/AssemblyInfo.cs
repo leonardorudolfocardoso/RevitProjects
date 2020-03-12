@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PrintToPdf")]
-[assembly: AssemblyDescription("Revit Add-In Description for PrintToPdf")]
+[assembly: AssemblyTitle("SheetsExport")]
+[assembly: AssemblyDescription("Revit Add-In Description for SheetsExport")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Autodesk Inc.")]
-[assembly: AssemblyProduct("PrintToPdf Revit C# .NET Add-In")]
+[assembly: AssemblyProduct("SheetsExport Revit C# .NET Add-In")]
 [assembly: AssemblyCopyright("Copyright 2019 (C) Leonardo Cardoso, BFS Engenharia ltda")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
